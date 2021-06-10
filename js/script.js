@@ -1,12 +1,12 @@
-function isPal(world) {
-    var wLength = parseInt(world.length - 1);
+function isPal(word) {
+    var wLength = word.length - 1;
 
     var wPal = '';
     for (i = wLength; i >= 0; i--) {
-        wPal += world[i];
+        wPal += word[i];
     }
 
-    if (world == wPal) {
+    if (word == wPal) {
         return true;
     } else {
         return false;
@@ -22,23 +22,23 @@ function isPari(num) {
 }
 
 
-var userWorld = prompt('Inserisci una parola');
+var userWord = prompt('Inserisci una parola');
 
-if (isPal(userWorld)) {
-    document.getElementById('world').innerHTML = userWorld + ' è una parola palindroma! Il suo contario è ' + wPal;
+if (isPal(userWord)) {
+    document.getElementById('word').innerHTML = userWord + ' è una parola palindroma! Il suo contario è ' + wPal;
 } else {
-    document.getElementById('world').innerHTML = userWorld + ' non è una parola palindroma!';
+    document.getElementById('word').innerHTML = userWord + ' non è una parola palindroma!';
 }
 
 // ------------------------------------------------------
 
-var userChoice = prompt('Pari o dispari?');
+var userChoice = prompt('Pari o dispari?').toLowerCase();
 while (userChoice !== 'pari' && userChoice !== 'dispari') {
     alert('Devi scegliere tra pari o dispari!');
-    var userChoice = (prompt('Pari o dispari?')).toLowerCase;
+    var userChoice = prompt('Pari o dispari?').toLowerCase();
 }
 var userNum = parseInt(prompt('Scegli un numero da 1 a 5!'));
-while (isNaN(userNum) || userNum === 0 || userNum > 5) {
+while (isNaN(userNum) || userNum < 1 || userNum > 5) {
     alert("Devi inserire un numero compreso fra 1 e 5!");
     var userNum = parseInt(prompt('Scegli un numero da 1 a 5!'));
 }
